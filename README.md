@@ -1,4 +1,4 @@
-#Subtiles
+#Subtitles
 Solution for creating a site that shows subtitles over a movie. The
 subtitles are based off of the .srt subtitle format. The subtitles
 have been converted to JavaScript objects.
