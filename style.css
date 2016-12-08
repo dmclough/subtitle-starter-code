@@ -1,0 +1,23 @@
+body {
+  background-color: black;
+}
+
+.container video {
+  width: 100%;
+  display: relative;
+}
+
+/*
+Stretch the subtitles to fill the full width
+and be placed at the bottom of the movie.
+ */
+.subtitles {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  color: white;
+  font-size: 24pt;
+  padding-bottom: 60px;
+}
