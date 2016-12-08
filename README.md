@@ -3,6 +3,39 @@ Solution for creating a site that shows subtitles over a movie. The
 subtitles are based off of the .srt subtitle format. The subtitles
 have been converted to JavaScript objects.
 
+## What's Given
+This starting code contains HTML that's all set up with a place for
+two lines of subtitles to appear, and a small place to display the
+current time of the movie. The movie is set up to play automatically.
+
+The JavaScript contains function definitions for all the functions you
+will need to complete this assignment. Every function definition is empty
+besides having a name, a parameter and a comment describing what the function
+should do. It's up to you to implement each actual function.
+
+The functions are there as a guide.  You are allowed to add or remove however
+many functions you wish. The function definitions as they are are literally the
+same as all the functions in our solution code.
+
+## The Basic Idea
+We're trying to show subtitles over a movie. The subtitles are represented in
+an array of objects. Each object has a 'duration' property that shows what
+time the subtitle should appear, and when it should disappear. Each object
+has exactly two lines of text. Sometimes one of the lines is empty text.
+
+Your application should use an interval to constantly rapidly check the current
+play time of the movie. You should use the infrastructure of the functions
+provided to loop through the list of subtitles and compare them each to the
+current play time of the movie. If a subtitle should be showing, then get
+those strings in the subtitle objects onto your page!!
+
+That's it. When you're done you should see that you can seek through the
+movie and the subtitles will display correctly because they're based only
+off the current time of the movie. Notice that the one iterval provided
+does not try to set timeouts for each subtitle. Instead it just constantly
+reads the current time of the movie and it uses that time to determine
+what subtitle should be shown.
+
 ### Original .srt Format
 ```
 0
