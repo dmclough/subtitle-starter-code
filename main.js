@@ -23,13 +23,15 @@ $(document).ready(function() {
 
     for (i =0; i < SUBTITLES.length; i++) {
       if (time > netSecondsStart && time < netSecondsStart) {
-        $('#line1').append(SUBTITLES[i].line1);
-        $('#line2').append(SUBTITLES[i].line2);
+        $('#line1').text(SUBTITLES[i].line1);
+        $('#line2').text(SUBTITLES[i].line2);
       } else {
-        $('#line1').append("");
-        $('#line2').append("");
+        $('#line1').text("");
+        $('#line2').text("");
       };
     }
+
+
   };
 
   // This function should take time as a parameter and
@@ -42,19 +44,19 @@ $(document).ready(function() {
   // empty subtitle (and not null) and it won't crash our
   // program.
   function findSubtitle(time) {
-    if (isTimeInDuration = true) {
-      $('#line1').append(SUBTITLES[i].line1);
-      $('#line2').append(SUBTITLES[i].line2);
-    } else
-      $('#line1').append("");
-      $('#line2').append("");
-  }
+    if (isTimeInDuration === true) {
+
+    }
+
+
+  };
 
   // This function should accept a current time, and one subtitle
   // object and return true or false depending on if the subtitle
   // should appear on the screen at the given time.
-  function isTimeInDuration(time, subtitle) {
-    if (time > netSecondsStart[i] && time < netSecondsEnd[i]) {
+  function isTimeInDuration(time, netSecondsStart, netSecondsEnd) {
+    convertToSeconds();
+    if (time > netSecondsStart && time < netSecondsEnd) {
       return true;
     } else {
       return false;
@@ -68,18 +70,10 @@ $(document).ready(function() {
   // a number that can be used elsewhere. For instance,
   // timestampToSeconds("00:00:05,580") should return 5.580
 
+
 function convertToSeconds() {
 
-    // class StartStopObject {
-    //   constructor(startTime, endTime, line1, line2) {
-    //     this.startTime = startTime;
-    //     this.endTime = endTime;
-    //     this.line1 = line1;
-    //     this.line2 = line2;
-    //     }
-    // };
-
-      var timeRange = SUBTITLES[i].duration;
+      var timeRange = SUBTITLES[13].duration;
       //console.log(timeRange);
       //Get start seconds....
       var milliSecondsStart = parseInt(timeRange.substring(9, 12), 10);
@@ -89,23 +83,16 @@ function convertToSeconds() {
       //console.log("interval start seconds: " + netSecondsStart);
 
       //Get end seconds....
-
       var milliSecondsEnd = parseInt(timeRange.substring(26, 29), 10);
       var secondsEnd = parseInt(timeRange.substring(23, 25), 10);
       var minutesEnd = parseInt(timeRange.substring(3, 5),10);
       var netSecondsEnd = minutesEnd * 60  + secondsEnd + (milliSecondsEnd/1000);
       //console.log("interval end seconds: " + netSecondsEnd);
+      console.log(netSecondsStart, netSecondsEnd);
       return(netSecondsStart, netSecondsEnd);
+      //console.log(netSecondsStart, netSecondsEnd);
 
-    // for (var i = 0; i < SUBTITLES.length; i++) {
-    //   var arr = [];
-    //   //create a new object
-    //   arr.push(new StartStopObject (netSecondsStart, netSecondsEnd, SUBTITLES[i].line1, SUBTITLES[i].line2));
-    // };
-  };
-
-
-
+};
 
 
 // This is a test to see if the findSubtitle function returns the correct
